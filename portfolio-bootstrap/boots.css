@@ -1,0 +1,296 @@
+/* Base */
+:root{
+  --bg:#0b0b0f;
+  --bg-2:#111218;
+  --card:#151725ee;
+  --glass: rgba(255,255,255,.06);
+  --border: rgba(255,255,255,.12);
+  --text:#e9e9ee;
+  --muted:#9aa0ad;
+  --grad: linear-gradient(135deg,#8a5cff, #ff3cac 60%, #ffc86b);
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, Arial;
+  background: radial-gradient(1200px 600px at 70% -10%, rgba(138,92,255,.2), transparent),
+              var(--bg);
+  color: var(--text);
+  scroll-behavior:smooth;  /* smooth scrolling */
+}
+.bg-dark-2{ background: var(--bg-2); }
+
+/* Navbar */
+.blur-nav{
+  backdrop-filter: blur(8px);
+  background: linear-gradient(180deg, rgba(0,0,0,.55), transparent);
+  border-bottom:1px solid transparent;
+  transition: all .3s ease;
+}
+.navbar.scrolled{
+  background: rgba(9,9,12,.85);
+  border-bottom-color: var(--border);
+}
+
+/* Hero */
+.hero{
+  min-height: 100svh;
+  position: relative;
+  padding-top: 110px;
+  display:flex;
+}
+.hero-title .stroke{
+  -webkit-text-stroke: 2px #fff;
+  color: transparent;
+}
+.me-card img{
+  width: 320px; height: 320px;
+  object-fit: cover;
+  border: 6px solid rgba(255,255,255,.08);
+}
+.hero-glow{
+  position:absolute; inset: 0;
+  background: radial-gradient(600px 300px at 85% 20%, rgba(255,60,172,.15), transparent),
+              radial-gradient(600px 300px at 10% 80%, rgba(138,92,255,.15), transparent);
+  pointer-events:none;
+}
+
+/* Glassmorphism Card */
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 15px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+  overflow: hidden;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Card base */
+.project.card {
+  cursor: pointer;
+  border: none;
+  transition: all 0.4s ease;
+}
+
+.project.card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+
+/* Image overlay effect */
+.project .ratio {
+  position: relative;
+  overflow: hidden;
+}
+
+.project .ratio img {
+  transition: transform 0.5s ease;
+  object-fit: cover;
+}
+
+.project.card:hover .ratio img {
+  transform: scale(1.1);
+}
+
+/* Card content */
+.card-body {
+  padding: 1rem 1.2rem 1.5rem;
+  transition: all 0.4s ease;
+}
+
+.project.card:hover .card-body {
+  transform: translateY(-5px);
+}
+
+/* Text Styling */
+.card-title {
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: #00e676; /* GFG-style green */
+  margin-bottom: 0.6rem;
+}
+
+.card-text {
+  font-size: 0.9rem;
+  color: #ccc;
+  line-height: 1.5;
+  max-height: 6em;
+  overflow: hidden;
+}
+
+/* Button */
+.project .btn {
+  border-radius: 10px;
+  font-weight: 600;
+  background: linear-gradient(90deg, #00e676, #00c853);
+  border: none;
+}
+
+.project .btn:hover {
+  background: linear-gradient(90deg, #00c853, #00e676);
+}
+
+
+/* Badge styling */
+.badge {
+  font-size: 0.75rem;
+  font-weight: 500;
+  background: linear-gradient(135deg, #ff4d6d, #ff9a3c);
+  color: #fff;
+  padding: 0.25em 0.5em;
+  border-radius: 50px;
+  box-shadow: 0 4px 15px rgba(255,77,109,0.4);
+  transition: all 0.3s ease;
+}
+
+.badge:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(255,77,109,0.6);
+}
+
+/* Fade in animation */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s forwards;
+}
+
+.reveal-delay-1 { animation-delay: 0.2s; }
+.reveal-delay-2 { animation-delay: 0.4s; }
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+/* Gradient button hover */
+.btn-gradient {
+  background: linear-gradient(135deg, #ff4d6d, #ff9a3c);
+  color: #fff;
+  border-radius: 50px;
+  padding: 0.6em 1.5em;
+  transition: all 0.4s ease;
+}
+
+.btn-gradient:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(255,77,109,0.5);
+}
+
+/* Buttons */
+.btn-gradient{
+  background: var(--grad);
+  color:#0a0a0a;
+  font-weight:700;
+  border:none;
+  border-radius: 999px;
+  box-shadow: 0 8px 20px rgba(255,60,172,.25);
+}
+.btn-gradient:hover{ filter: brightness(.95); color:#0a0a0a; }
+
+/* Services list rows */
+.service{
+  padding: 22px 24px;
+  border-bottom:1px dashed var(--border);
+  background: rgba(255,255,255,.02);
+}
+.service:last-child{border-bottom: none}
+
+/* Sections */
+.section-padding{padding: 90px 0}
+
+/* Metrics */
+.metric span{ display:block }
+
+/* Reveal Animations */
+.reveal, .reveal-delay-1, .reveal-delay-2, .reveal-delay-3{
+  opacity:0; transform: translateY(24px); 
+}
+.revealed{ opacity:1; transform:none; transition: all .7s cubic-bezier(.2,.7,.2,1) }
+.reveal-delay-1.revealed{ transition-delay:.1s }
+.reveal-delay-2.revealed{ transition-delay:.2s }
+.reveal-delay-3.revealed{ transition-delay:.3s }
+
+/* Footer */
+footer{ border-top:1px solid var(--border) }
+
+/* Small tweaks */
+.card-title{ font-weight:600 }
+.text-secondary{ color: var(--muted)!important }
+
+/* Responsive */
+@media (max-width: 992px){
+  .me-card img{ width: 240px; height: 240px }
+  .hero-title{ font-size: clamp(2.6rem, 6vw, 4rem) }
+}
+#skills i {
+  transition: transform 0.3s ease-in-out;
+}
+#skills i:hover {
+  transform: scale(1.2);
+}
+@media (max-width: 576px){
+  .hero{ flex-direction: column; text-align: center; gap: 40px; padding-top: 70px }
+  .me-card img{ width: 200px; height: 200px }
+}
+
+
+
+#skills .card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 15px;
+}
+#skills .card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+#skills i {
+  transition: color 0.3s ease;
+}
+#skills .card:hover i {
+  color: #f99703;
+}
+.progress {
+  height: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.progress-bar {
+  font-weight: bold;
+  text-align: center;
+  transition: width 1.5s ease-in-out;
+}
+
+.profile-image {
+  width: 400px;           /* Adjust size */
+  height: 400px;          /* Same as width to keep circle */
+  border-radius: 50%;     /* Perfect circle */
+  object-fit: cover;      /* Prevents distortion */
+  border: 4px solid #fff; /* Optional border */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(255, 0, 150, 0.6),
+              0 0 50px rgba(0, 200, 255, 0.6),
+              0 0 75px rgba(255, 255, 0, 0.6);
+}
+
+
+
+
+
